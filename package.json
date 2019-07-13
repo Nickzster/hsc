@@ -1,0 +1,40 @@
+{
+  "name": "hsc",
+  "displayName": "Halo Scripting Code",
+  "description": "Halo Scripting Code for the Halo Custom Edition game.",
+  "version": "0.0.1",
+  "publisher": "Nickster5000",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Nickzster/haloce"
+  },
+  "icon": "favicon.jpg",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "hsc",
+        "aliases": [
+          "Halo Scripting Code",
+          "hsc"
+        ],
+        "extensions": [
+          ".hsc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hsc",
+        "scopeName": "source.hsc",
+        "path": "./syntaxes/hsc.tmLanguage.json"
+      }
+    ]
+  }
+}

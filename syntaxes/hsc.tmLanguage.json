@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.hsc",
+  "name": "Halo Scripting Code",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#scriptTypes"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#valueTypes"
+    },
+    {
+      "include": "#functions"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.hsc",
+          "match": "\\b(if|and|begin|begin_random|cond|global|inspect|min|max|not|or|script|set|sleep|sleep_until|wake|thread_sleep)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.hsc",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.hsc",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hsc",
+          "match": "\\d+"
+        },
+        {
+          "name": "constant.numeric.hsc",
+          "match": "\\d+\\.\\d+"
+        }
+      ]
+    },
+    "scriptTypes": {
+      "patterns": [
+        {
+          "name": "keyword.other",
+          "match": "\\b(startup|dormant|stub|static|continuous)\\b"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line",
+          "match": "\\;.*"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.new",
+          "match": "(\\+|-|\\*|/|=|!=|>|<|>=|<=)"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "constant.other",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "valueTypes": {
+      "patterns": [
+        {
+          "name": "support.type",
+          "match": "\\b(boolean|real|short|long|string|trigger_volume|cutscene_flag|cutscene_camera_point|cutscene_title|cutscene_recording|device_group|ai|ai_command_list|starting_profile|conversation|navpoint|hud_message|object_list|sound|effect|damage|looping_sound|animation_graph|actor_variant|damage_effect|object_definition|game_difficulty|team|ai_default_state|actor_type|hud_corner|object|unit|vehicle|weapon|device|scenery|object_name|unit_name|vehicle_name|weapon_name|device_name|scenery_name)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function",
+          "match": "\\b(activate_nav_point_flag|activate_nav_point_object|activate_team_nav_point_flag|activate_team_nav_point_object|ai_actors|ai_allegiance|ai_allegiance_broken|ai_allegiance_remove|ai_allow_charge|ai_allow_dormant|ai_attach|ai_attach_free|ai_attack|ai_automatic_migration_target|ai_beserk|ai_braindead|ai_braindead_by_unit|ai_command_list|ai_command_list_advance|ai_command_list_advance_by_unit|ai_command_list_by_unit|ai_command_list_status|ai_conversation|ai_conversation_advance|ai_conversation_line|ai_conversation_status|ai_conversation_stop|ai_debug_communication_focus|ai_debug_communication_ignore|ai_debug_communication_supress|ai_debug_sound_point_set|ai_debug_speak|ai_debug_speak_list|ai_debug_teleport_to|ai_debug_vocalize|ai_defend|ai_deselect|ai_detach|ai_dialogue_triggers|ai_disregard|ai_erase|ai_erase_all|ai_exit_vehicle|ai_follow_distance|ai_follow_target_ai|ai_follow_target_disable|ai_follow_target_players|ai_follow_target_unit|ai_force_active|ai_force_active_by_unit|ai_free|ai_free_units|ai_go_to_vehicle|ai_go_to_vehicle_override|ai_going_to_vehicle|ai_grenades|ai_is_attacking|ai_kill|ai_kill_silent|ai_lines|ai_link_activation|ai_living_count|ai_living_fraction|ai_look_at_object|ai_magically_see_encounter|ai_magically_see_players|ai_magically_see_unit|ai_maneuver|ai_maneuver_enable|ai_migrate|ai_migrate_and_speak|ai_migrate_by_unit|ai_noswarm_count|ai_place|ai_playfight|ai_prefer_target|ai_reconnect|ai_renew|ai_retreat|ai_select|ai_set_blind|ai_set_current_state|ai_set_deaf|ai_set_respawn|ai_set_return_state|ai_set_team|ai_spawn_actor|ai_status|ai_stop_looking|ai_strength|ai_swarm_count|ai_teleport_to_starting_location|ai_teleport_to_starting_location_if_unsupported|ai_try_to_fight_nothing|ai_try_to_fight|ai_try_to_fight_player|ai_vehicle_encounter|ai_vehicle_enterable_actor_type|ai_vehicle_enterable_actors|ai_vehicle_enterable_disable|ai_vehicle_enterable_distance|ai_vehicle_enterable_team|attract_mode_start|bind|breakable_surfaces_enable|breakable_surfaces_reset|camera_control|camera_set|camera_set_animation|camera_set_dead|camera_set_first_person|camera_set_relative|camera_time|change_team|cheat_active_camouflage|cheat_active_camouflage_local_player|cheat_all_powerups|cheat_infinite_ammo|cheat_medusa|cheat_bottomless_clip|cheat_super_jump|cheat_omnipotent|cheat_bump_possession|cheat_all_vehicles|cheat_all_weapons|cheat_spawn_warthog|cheat_teleport_to_camera|cheats_load|checkpoint_load|checkpoint_save|cinematic_abort|cinematic_screen_effect_set_convolution|cinematic_screen_effect_set_filter|cinematic_screen_effect_set_filter_desaturation_tint|cinematic_screen_effect_set_video|cinematic_screen_effect_start|cinematic_screen_effect_stop|cinematic_set_near_clip_distance|cinematic_set_title|cinematic_set_title_delayed|cinematic_show_letterbox|cinematic_skip_start_internal|cinematic_skip_stop_internal|cinematic_start|cinematic_stop|cinematic_suppress_bsp_object_creation|config_one_control|connect|crash|custom_animation|custom_animation_list|damage_new|damage_object|deactivate_nav_point_flag|deactivate_nav_point_object|deactivate_team_nav_point_flag|deactivate_team_nav_point_object|debug_camera_load|debug_camera_save|debug_memory|debug_memory_by_file|debug_memory_for_file|debug_teleport_player|debug_sounds_distances|debug_sounds_enable|debug_sounds_wet|debug_tags|delete_save_game_files|device_get_position|device_get_power|device_group_change_only_once_more_set|device_group_get|device_group_set|device_group_set_immediate|device_one_sided_set|device_operates_automatically_set|device_get_position|device_set_position|device_set_position_immediate|device_set_power|display_scenario_help|effect_new|effect_new_on_object_marker|enable_hud_help_flash|error_overflow_suppression|fade_in|fade_out|fast_setup_network_server|game_all_quiet|game_difficulty_get|game_difficulty_get_real|game_difficulty_set|game_is_cooperative|game_lost|game_revert|game_reverted|game_safe_to_save|game_safe_to_speak|game_save|game_save_cancel|game_save_no_timeout|game_save_totally_unsafe|game_saving|game_skip_ticks|game_speed|game_time|game_won|garbage_collect_now|get_digital_forward_throttle|get_digital_strafe_throttle|get_digital_yaw_increment|get_digital_pitch_increment|get_gamepad_forward_threshold|game_gamepad_strafe_threshold|get_gamepad_yaw_scale|get_gamepad_pitch_scale|get_mouse_forward_threshold|get_mouse_strafe_threshold|get_mouse_yaw_scale|get_mouse_pitch_scale|get_yaw_rate|get_pitch_rate|hammer_begin|hammer_stop|help|hud_blink_health|hud_blink_motion_sensor|hud_blink_shield|hud_clear_messages|hud_get_timer_ticks|hud_help_flash_restart|hud_set_help_text|hud_set_objective_text|hud_set_timer_position|hud_set_timer_time|hud_set_timer_warning_time|hud_show_crosshair|hud_show_health|hud_show_motion_sensor|hud_show_shield|input_active_joy|input_deactivate_joy|input_find_default|input_find_joystick|input_get_joy_count|input_is_joy_active|input_show_joystick_info|list_count|list_get|magic_melee_attack|magic_seat_name|map_name|map_reset|message_metrics_clear|message_metrics_dump|multiplayer_map_name|net_graph_clear|net_graph_show|network_client_dump|network_server_dump|numeric_countdown_timer_get|numeric_countdown_timer_restart|numeric_countdown_timer_set|numeric_countdown_timer_stop|object_beautify|object_can_take_damage|object_cannot_take_damage|object_create|object_create_anew|object_create_anew_containing|object_create_containing|object_destroy|object_destroy_all|object_destroy|containing|object_pvs_activate|object_pvs_clear|object_pvs_set_camera|object_pvs_set_object|object_set_collidable|object_set_facing|object_set_melee_attack_inhibited|object_set_permutation|object_set_ranged_attack_inhibited|object_set_scale|object_set_shield|object_teleport|object_type_predict|objects_attach|objects_can_see_flag|object_can_see_object|objects_delete_by_definition|objects_detach|objects_predict|pause_hud_timer|play_update_history|playback|player0_joystick_set_is_normal|player0_look_pitch_is_inverted|player_action_test_accept|player_action_test_action|player_action_test_back|player_action_test_grenade_trigger|player_action_test_jump|player_action_test_look_relative_all_directions|player_action_test_look_relative_down|player_action_test_look_relative_left|player_action_test_look_relative_right|player_action_test_look_relative_up|player_action_test_move_relative_all_directions|player_action_test_primary_trigger|player_action_test_reset|player_action_test_zoom|player_add_equipment|player_camera_control|player_effect_set_max_rotation|player_effect_set_max_translation|player_effect_set_max_vibrate|player_effect_start|player_effect_stop|player_enable_input|players_unzoom_all|print|print_binds|profile_activate|profile_deactivate|profile_dump|profile_graph_toggle|profile_load|profile_reset|profile_service_clear_timers|profile_service_dump_timers|profile_unlock_solo_levels|quit|rasterizer_decals_flush|rasterizer_fixed_function_ambient|rasterizer_fps_accumulate|rasterizer_lights_reset_for_new_map|rasterizer_model_ambient_reflection_tint|rasterizer_reload_effects|recording_kill|recording_play|recording_play_and_delete|recording_play_and_hover|recording_time|render_effects|render_lights|scenery_animation_start|scenery_animation_start_at_frame|script_recompile|script_screen_effect_set_value|set_digital_forward_throttle|set_digital_pitch_increment|set_digital_strafe_throttle|set_digital_yaw_increment|set_gamepad_forward_threshold|set_gamepad_pitch_scale|set_gamepad_strafe_threshold|set_gamepad_yaw_scale|set_gamma|set_mouse_forward_threshold|set_mouse_pitch_scale|set_mouse_strafe_threshold|set_mouse_yaw_scale|set_pitch_rate|set_yaw_rate|show_hud|show_hud_help_text|show_hud_timer|show_player_update_stats|sound_cache_dump_to_file|sound_cache_flush|sound_class_set_gain|sound_eax_enabled|sound_enable|sound_enable_eax|sound_enable_hardware|sound_get_effects_gain|sound_get_gain|sound_get_master_gain|sound_get_music_gain|sound_get_supplementary_buffers|sound_impulse_predict|sound_impulse_start|sound_impulse_stop|sound_impulse_time|sound_looping_predict|sound_looping_set_alternate|sound_looping_set_scale|sound_looping_start|sound_looping_stop|sound_set_effects_gain|sound_set_env|sound_set_factor|sound_set_gain|sound_set_master_gain|sound_set_music_gain|sound_set_rolloff|sound_set_supplementary_buffers|structure_bsp_index|structure_lens_flares|place|sv_ban|sv_banlist|sv_end_game|sv_kick|sv_map|sv_map_next|sv_map_reset|sv_mapcycle|sv_mapcycle_add|sv_mapcycle_begin|sv_mapcycle_del|sv_maxplayers|sv_name|sv_parameters_dump|sv_parameters_reload|sv_password|sv_players|sv_status|sv_unban|switch_bsp|texture_cache_flush|time_code_reset|time_code_show|time_code_start|ui_widget_show_path|unbind|unit_aim_without_turning|unit_can_blink|unit_close|unit_custom_animation_at_frame|unit_doesnt_drop_items|unit_enter_vehicle|unit_exit_vehicle|unit_get_current_flashlight_state|unit_get_custom_animation_time|unit_get_health|unit_get_shield|unit_get_total_grenade_count|unit_has_weapon|unit_has_weapon_readied|unit_impervious|unit_is_playing_custom_animation|unit_kill|unit_kill_silent|unit_open|unit_set_current_vitality|unit_set_desired_flashlight_state|unit_set_emotion|unit_set_emotion_animation|unit_set_enterable_by_player|unit_set_maximum_vitality|unit_set_seat|unit_set_seat|unit_solo_player_integrated_night_vision_is_active|unit_stop_custom_animation|unit_suspended|unit_set_current_vitality|unit_set_desired_flashlight_state|units_set_maximum_vitality|vehicle_driver|vehicle_gunner|vehicle_hover|vehicle_load_magic|vehicle_riders|vehicle_test_seat|vehicle_test_seat_list|vehicle_unload|version|volume_teleport_players_not_inside|volume_test_object|volume_test_objects|volume_test_objects_all)\\b"
+        }
+      ]
+    }
+  }
+}
